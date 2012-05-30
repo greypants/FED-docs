@@ -4,7 +4,7 @@ _These are not merely guidelines_ — if you disagree with a standard, take it u
 
 # General
 
-## Indentation
+### Indentation
 Indent with hard tabs, not spaces. Do not mix tabs and spaces.
 
 RIGHT
@@ -28,7 +28,7 @@ var response = ‘foo’,
 $(this).remove();
 }
 
-## Quotes
+### Quotes
 Use double quotes in HTML, single quotes everywhere else.
 
 RIGHT
@@ -41,7 +41,7 @@ WRONG
 var html = “<a href=’#’>”;
 background-image: url(“image.png”);
 
-## Blank Lines
+### Blank Lines
 Use a single blank line to visually separate ideas. CSS rules and JavaScript methods are always followed/preceded by blank lines.
 
 ```
@@ -98,7 +98,7 @@ myMethods = {
 /* @end */
 ```
 
-## Comments
+### Comments
 Comments are either single-line, or multi-line with indents. JavaDoc style (starting each line with a *) is not used.
 
 ```
@@ -123,7 +123,7 @@ WRONG
  */
 ```
 
-## Grouping
+### Grouping
 CSSedit syntax are used for groups in CSS or JS. The contents of a group are indented. Group titles are lowercase. Groups are surrounded by blank lines.
 
 ```
@@ -163,12 +163,12 @@ p {
 /* Lists */
 ```
 
-## Existing code
+### Existing code
 These standards are applied to all work, including new code written in existing projects. When practical, existing project should be updated to meet these standards.
 
 # HTML
 
-## Tags
+### Tags
 Close all tags. Lowercase element names. Don’t use trailing slashes for self-closing tags. Use HTML5 booleans when appropriate.
 
 ```
@@ -181,7 +181,7 @@ WRONG
 <input type=”checkbox” checked=”checked” />
 ```
 
-## IDs & Classes
+### IDs & Classes
 IDs/class names are lowercase, and they do not contain underscores.
 
 ```
@@ -194,7 +194,7 @@ WRONG
 <img src=”image.jpg”>
 ```
 
-## Long Tags
+### Long Tags
 When HTML tags get too long, their attributes are broken out and indented. In this case, the closing caret is on its own line, at the original indentation level.
 ```
 RIGHT
@@ -214,7 +214,7 @@ data-to-track=”Product,Click,Frozen Planet”>
 </div></div>
 ```
 
-## Server-side Tags
+### Server-side Tags
 Wrapping PHP or ERB tags behave like block-level code, in that their contents are indented.
 
 ```
@@ -267,7 +267,7 @@ echo $product[‘name’];
 
 # CSS
 
-## Font sizing
+### Font sizing
 Don’t use ems unless you have a really special case. Line-height on broad selectors (body, p) should be unitless.
 
 ```
@@ -277,7 +277,7 @@ p {
 }
 ```
 
-## Property order
+### Property order
 CSS properties are alphabetically ordered, after any @extends and @includes.
 
 ```
@@ -297,7 +297,7 @@ p {
 Sass Syntax
 Use Sass, Use the SCSS syntax.
 
-## CSS Formatting
+### CSS Formatting
 Each CSS selector and property is on its own line. If an property has comma-separated values and becomes too long, it can be broken out into multiple lines, with the first value on a new line.
 
 ```
@@ -331,7 +331,7 @@ NOT EVEN CLOSE
 
 # JavaScript
 
-## Var and method names
+### Var and method names
 All JavaScript var names are camelCase. The only exception is any var that’s used as a class/constructor (which are TitleCased).
 jQuery/Zepto objects are always preceded with $.
 Use “self” to reference or minify “this” when necessary.
@@ -357,7 +357,7 @@ var timer = function() {
 var timer = new Timer();
 ```
 
-## Whitespace
+### Whitespace
 Opening braces are preceded by a space.
 
 ```
@@ -377,7 +377,7 @@ for(var i=0,j=arr.length;i<j;i++){
 }
 ```
 
-## Var declarations
+### Var declarations
 Vars are declared at the start of scope. They each have their own line, and begin with the var keyword.
 
 ```
@@ -399,7 +399,7 @@ var d = true
 }
 ```
 
-## Functions
+### Functions
 Functions are declared as variables, to avoid problems with JavaScript’s name hoisting. A space follows the argument parens.
 
 ```
@@ -412,7 +412,7 @@ function doStuff(){
 }
 ```
 
-## Object/Array Syntax
+### Object/Array Syntax
 Use linebreaks after/before brackets and braces, unless you have a single-property array or object. Put a space after each colon. Don’t quote object literal keys unless they contain special characters. (The exception is writing a string to be parsed as JSON, which requires double quotes on keys and values)
 
 ```
@@ -443,7 +443,7 @@ WRONG
 ]
 ```
 
-## “Optional” Syntax
+### “Optional” Syntax
 Although semicolons and braces can be parser-optional, we use them.
 Semicolons follow a statement.
 Conditional blocks go on a new line.
@@ -469,7 +469,7 @@ if (true)
 } else { alert(‘false!’) }
 ```
 
-## Flow control with operators
+### Flow control with operators
 Use of &&, ||, and ternary operators to control execution flow and variable declaration is totally okay.
 
 ```
@@ -481,15 +481,15 @@ isTimerReady && timer.start();
 timer[isTimerReady ? ‘start’ : ‘wait’]();
 ```
 
-## Strictness
+### Strictness
 === is preferred to == when applicable.
 Window properties (not methods) are prefixed with “window”.
 parseInt() always gets a second argument of 10 (unless you really do want to parse an octal or a binary number).
 
-## Eval
+### Eval
 Don’t use eval() to solve any problem except executing user-written JS. Don’t pass strings to setTimeout().
 
-## Script Tags
+### Script Tags
 HTML comments, CDATA, etc don’t belong in script tags. Neither do language or type attributes.
 
 ```
