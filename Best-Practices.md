@@ -1,6 +1,13 @@
 
 These are the recommended best practices for Viget front-end development.
 
+- [General](#general)
+- [HTML](#html)
+- [CSS](#css)
+- [JavaScript](#javascript)
+
+<hr>
+
 # General
 
 ### Readability vs Compression
