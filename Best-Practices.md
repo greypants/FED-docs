@@ -3,12 +3,12 @@ These are the recommended best practices for Viget front-end development.
 
 # General
 
-## Readability vs Compression
+### Readability vs Compression
 Prefer readability over file-size concerns when it comes to writing and maintaining code. Compression can be automated, clear code can’t.
 
 <hr>
 
-## Modularity
+### Modularity
 When possible, write features or content blocks in a modular way. Features should be portable (possible to move between pages or containers) and repeatable (you can run more than one on a page, or stack several without causing layout problems).
 
 This means:
@@ -20,29 +20,29 @@ This means:
 
 <hr>
 
-## Parts Kit
+### Parts Kit
 When possible, reproduce your modular styles and behaviors in a Parts Kit, to document them for future use, test them easily, and maintain a working copy. The Parts Kit also serves as a test of code modularity.
 
 <hr>
 
-## Organization
+### Organization
 Prefer folder structures over filenames. Example: images/desktop/icons/arrow.png is preferable to images/icn_arrow.png
 
 <hr>
 
-## Source Files
+### Source Files
 Maintain your source files (PSDs, EPSes) outside of the repo to prevent filesize bloat, and link to them in your README.
 
 <hr>
 
-## Automation
+### Automation
 On non-Rails projects, use Bundler with a Gemfile to manage automation requirements. Use Guard to automate minification, sprite generation, file compression, etc. Document its installation in the README.
 
 <hr>
 
 # HTML
 
-## Doctype
+### Doctype
 The HTML5 Doctype is used for all pages:
 
 ```
@@ -53,10 +53,10 @@ While HTML5 offers the flexibility of more free-form style coding (akin to HTML 
 
 <hr>
 
-## Tags
+### Tags
 Use parts of HTML5 when appropriate, while ensuring older browsers are handled fairly. When using new structural tags (like header or article), either provide a JavaScript shim or avoid styling the tags. For other new tags, always provide a fallback for older browsers. The simple HTML5 input types can be used without concern.
 
-## Accepted HTML5 input types:
+### Accepted HTML5 input types:
 - email
 - tel (telephone number)
 - number (as in security code or credit card number)
@@ -69,7 +69,7 @@ Use parts of HTML5 when appropriate, while ensuring older browsers are handled f
 
 <hr>
 
-## Character Encoding
+### Character Encoding
 Use the utf-8 charset unless otherwise dictated by the project.
 
 ```
@@ -78,13 +78,13 @@ Use the utf-8 charset unless otherwise dictated by the project.
 
 <hr>
 
-## Template
+### Template
 
 While there is no official template, we mostly use variations of the HTML5 Boilerplate. See also: Jason's fork of the HTML5 Boilerplate and Blake's Front End Formulation project.
 
 <hr>
 
-## Semantics
+### Semantics
 
 Almost all HTML elements carry an inherent meaning and should be used appropriately based on context. This includes:
 - Making use of DL (definition lists) and BLOCKQUOTE, when appropriate.
@@ -99,12 +99,12 @@ Almost all HTML elements carry an inherent meaning and should be used appropriat
 
 <hr>
 
-## SEO
+### SEO
 Avoid making the site’s logo an H1 element, particularly on every page of a given project. The repetition of H1 content across all pages is seen as duplicative by some search engines.
 
 <hr>
 
-## Accessibility
+### Accessibility
 Include skipnav links at the top of your page. When using these, you might also want to include the JS fix for Webkit browsers.
 
 <ul class="screen-reader">
@@ -122,13 +122,13 @@ Use ARIA landmark roles on your document structure. Roles:
 - search
 - main
 
-## Validation
+### Validation
 We will test our markup against the W3C validator, to ensure that the markup is well formed. 100% valid code is not a goal, but validation certainly helps to write more maintainable sites as well as debugging code. It’s suggested that FEDs auto-validate their code with a browser or text editor plugin.
 
 We do not guarantee code is 100% valid, but instead assures the cross-browser experience is fairly consistent.
 
 
-## IDs & Classes
+### IDs & Classes
 IDs and Classes should be specific and meaningful. IDs should be avoided where possible, due to their difficulty to override or reuse.
 
 Use terse CSS statements (‘.header-btn’, ‘.product-list li’) when possible to make code more reusable and easier to override. When you use the cascade, avoid long-distance cascading  (example: using classes on body to set font-sizes on a paragraph).
@@ -139,22 +139,22 @@ When creating IDs and Classes, try to avoid visual identifiers such as direction
 
 # CSS
 
-## Inline Styles
+### Inline Styles
 We strive to maintain proper separation of content and design, and therefore highly discourage the use of inline style=”…” attributes. CMS-controlled styles (background images, user-specified colors) are a common and valid exception.
 
 <hr>
 
-## Validation
+### Validation
 Don’t validate your CSS.
 
 <hr>
 
-## Font-Size Measurements
+### Font-Size Measurements
 Use px to define font size, because it offers absolute control over text. Unit-less line-height is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the font-size.
 
 <hr>
 
-## Hacks
+### Hacks
 Hacks are not used. When you need to target a specific browser, use a class on the HTML element.
 
 ```
@@ -169,7 +169,7 @@ WRONG
 }
 ```
 
-## Browser Specific Styles
+### Browser Specific Styles
 We encourage troubleshooting and building code that will work in all browsers without special modifications, but sometimes it is necessary to use conditional IE comments for CSS hooks we can use in our stylesheets.
 
 Class the html tag with the appropriate version of IE to be used directly in the master stylesheet that contains the selector being re-written. There are several versions of this idea; here is a common one from the HMTL5 boilerplate.
@@ -187,14 +187,14 @@ Class the html tag with the appropriate version of IE to be used directly in the
 
 <hr>
 
-## Images
+### Images
 
 Use CSS sprites generously. They make hover states easy, improve page load time, and reduce carbon dioxide emissions. If you can’t automatically generate your sprite, for the love of god save the original PSD somewhere.
 If you can’t automatically compress your images, manually compress them with ImageAlpha and ImageOptim
 
 <hr>
 
-## General Principles
+### General Principles
 - Add CSS through external files, minimizing the number of files, if possible. It should always be in the HEAD of the document.
 - Use the LINK tag to include, never the @import.
 - Don’t include styles inline in the document, either in a style tag or on the elements. It’s harder to track down style rules.
@@ -204,7 +204,7 @@ If you can’t automatically compress your images, manually compress them with I
 
 <hr>
 
-## SCSS
+### SCSS
 Define all your mixins/variables/defaults in a single file when possible.
 Sample structure for a screen.scss file:
 
@@ -224,7 +224,7 @@ Use @extend, not mixins, to repeat large blocks of style in a number of rules.
 
 # JavaScript
 
-## Framework
+### Framework
 We primarily develop new applications in jQuery; however, the JavaScript framework used is chosen on a per-project basis and is up to the discretion of the front-end development team for that project.
 
 The preferred loading method for jQuery is to load from the google CDN, then fallback with a local copy. Example:
@@ -236,7 +236,7 @@ The preferred loading method for jQuery is to load from the google CDN, then fal
 
 <hr>
 
-## Functions
+### Functions
 Avoid anonymous functions when named ones will better describe behavior. For example,
 
 ```
@@ -267,14 +267,14 @@ $(‘.row’).each(equalizeHeight);
 
 <hr>
 
-## Validation
+### Validation
 All JavaScript written should be run through a simple JSLint or JSHint validation before being committed. There is a TextMate "Javascript Tools" bundle that will automatically run JS through JSLint when saving a file.
 
 Additionally, “use strict”; should be prepended inside a closed scope around your code.
 
 <hr>
 
-## Minimizing Globar Vars
+### Minimizing Globar Vars
 Namespace all code to a clientname, and wrap your code in a self-executing function to prevent scope leak. Example:
 
 ```
@@ -291,7 +291,7 @@ window.CLIENTNAME = window.CLIENTNAME || {};
 
 <hr>
 
-## Coding Practices
+### Coding Practices
 
 - 99% of code should be housed in external Javascript files. They should be included at the END of the BODY tag for maximum page performance.
 - Nesting code in document.ready and window.load are not required, but encouraged when working with image sizes or writing to the body.
@@ -302,39 +302,39 @@ window.CLIENTNAME = window.CLIENTNAME || {};
 
 <hr>
 
-## .prototype
+### .prototype
 Don’t alter the prototype of basic JS objects (Object, String, Array, Function). If you feel like it’s the best solution for a large project document the changes extremely well (example: Sugar.js’s documentation)
 
 <hr>
 
-## Documentation
+### Documentation
 Don’t litter your code with JSdoc or NaturalDoc comments. If you’re not building an API with many potential users, you don’t need to generate docs.
 
 <hr>
 
-## Classes
+### Classes
 When you define a class (or singleton), use “init” for the initialization method. Set any static vars first, set init next, then define the remaining methods.
 
 <hr>
 
-## Booleans
+### Booleans
 Boolean variable names should try be worded as a present-tense statement. This typically means phrasing them with “to be” verbs such as “is” (e.g. isVisible, isActive), “does” (e.g. doesMove, doesFillView), “has” (e.g. hasAttributes), etc.
 
 <hr>
 
-## Third Party Code
+### Third Party Code
 All third-party code should be clearly segregated from code written in-house. For projects where many JS assets are being used, third-party code should be relegated to its own “vendor” directory within the main javascript folder.
 
 Don’t modify third-party scripts. If you have to, fork it, and use your fork. If you can’t do that, move it out of /vendor/ and very clearly comment to describe what you changed. Don’t remove attribution from third-party scripts.
 
 <hr>
 
-## Testing
+### Testing
 Testing is difficult and unproductive on DOM-heavy JS. Reserve unit/int testing for JS modules with a lot of logic.
 
 <hr>
 
-## Chained Methods
+### Chained Methods
 Long chains of methods should appear on separate lines after the selector, indented with one tab.
 
 ```
@@ -349,7 +349,7 @@ $(‘.something’)
 
 <hr>
 
-## Conditionals
+### Conditionals
 Use variables to simplify conditionals. This improves readability and cuts down on the need to write multiline conditional statements.
 
 ```
