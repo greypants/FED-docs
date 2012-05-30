@@ -2,6 +2,13 @@ The Viget standards for writing CSS, HTML, and JS. This document defines a unifo
 
 _These are not merely guidelines_ — if you disagree with a standard, take it up with the group, but until the standard is revised it should be followed on all your Viget work.
 
+- [General](#general)
+- [HTML](#html)
+- [CSS](#css)
+- [JavaScript](#javascript)
+
+<hr>
+
 # General
 
 ### Indentation
