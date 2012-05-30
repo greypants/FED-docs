@@ -28,8 +28,6 @@ var response = ‘foo’,
 $(this).remove();
 }
 
-<hr />
-
 ## Quotes
 Use double quotes in HTML, single quotes everywhere else.
 
@@ -42,8 +40,6 @@ WRONG
 <html class=’lt-ie7’>
 var html = “<a href=’#’>”;
 background-image: url(“image.png”);
-
-<hr />
 
 ## Blank Lines
 Use a single blank line to visually separate ideas. CSS rules and JavaScript methods are always followed/preceded by blank lines.
@@ -102,8 +98,6 @@ myMethods = {
 /* @end */
 ```
 
-<hr />
-
 ## Comments
 Comments are either single-line, or multi-line with indents. JavaDoc style (starting each line with a *) is not used.
 
@@ -128,8 +122,6 @@ WRONG
  * Comment
  */
 ```
-
-<hr />
 
 ## Grouping
 CSSedit syntax are used for groups in CSS or JS. The contents of a group are indented. Group titles are lowercase. Groups are surrounded by blank lines.
@@ -171,12 +163,8 @@ p {
 /* Lists */
 ```
 
-<hr />
-
 ## Existing code
 These standards are applied to all work, including new code written in existing projects. When practical, existing project should be updated to meet these standards.
-
-<hr />
 
 # HTML
 
@@ -193,8 +181,6 @@ WRONG
 <input type=”checkbox” checked=”checked” />
 ```
 
-<hr />
-
 ## IDs & Classes
 IDs/class names are lowercase, and they do not contain underscores.
 
@@ -207,8 +193,6 @@ WRONG
 <P class=”Intro_text”>Text goes here.
 <img src=”image.jpg”>
 ```
-
-<hr />
 
 ## Long Tags
 When HTML tags get too long, their attributes are broken out and indented. In this case, the closing caret is on its own line, at the original indentation level.
@@ -229,8 +213,6 @@ WRONG
 data-to-track=”Product,Click,Frozen Planet”>
 </div></div>
 ```
-
-<hr />
 
 ## Server-side Tags
 Wrapping PHP or ERB tags behave like block-level code, in that their contents are indented.
@@ -283,8 +265,6 @@ echo $product[‘name’];
 </div>
 ```
 
-<hr />
-
 # CSS
 
 ## Font sizing
@@ -296,8 +276,6 @@ p {
 	line-height: 1.45;
 }
 ```
-
-<hr />
 
 ## Property order
 CSS properties are alphabetically ordered, after any @extends and @includes.
@@ -316,12 +294,8 @@ p {
 }
 ```
 
-<hr />
-
 Sass Syntax
 Use Sass, Use the SCSS syntax.
-
-<hr />
 
 ## CSS Formatting
 Each CSS selector and property is on its own line. If an property has comma-separated values and becomes too long, it can be broken out into multiple lines, with the first value on a new line.
@@ -355,8 +329,6 @@ NOT EVEN CLOSE
 .main-content h2, .main-content h3 { box-shadow: 0 0 2px rgba(0,0,0,0.3), inset 0 0 2px rgba(0,0,0,0.3); font-size: 20px; }
 ```
 
-<hr />
-
 # JavaScript
 
 ## Var and method names
@@ -385,8 +357,6 @@ var timer = function() {
 var timer = new Timer();
 ```
 
-<hr />
-
 ## Whitespace
 Opening braces are preceded by a space.
 
@@ -406,8 +376,6 @@ for(var i=0,j=arr.length;i<j;i++){
 // Do something.
 }
 ```
-
-<hr />
 
 ## Var declarations
 Vars are declared at the start of scope. They each have their own line, and begin with the var keyword.
@@ -431,8 +399,6 @@ var d = true
 }
 ```
 
-<hr />
-
 ## Functions
 Functions are declared as variables, to avoid problems with JavaScript’s name hoisting. A space follows the argument parens.
 
@@ -445,8 +411,6 @@ WRONG
 function doStuff(){
 }
 ```
-
-<hr />
 
 ## Object/Array Syntax
 Use linebreaks after/before brackets and braces, unless you have a single-property array or object. Put a space after each colon. Don’t quote object literal keys unless they contain special characters. (The exception is writing a string to be parsed as JSON, which requires double quotes on keys and values)
@@ -479,8 +443,6 @@ WRONG
 ]
 ```
 
-<hr />
-
 ## “Optional” Syntax
 Although semicolons and braces can be parser-optional, we use them.
 Semicolons follow a statement.
@@ -507,8 +469,6 @@ if (true)
 } else { alert(‘false!’) }
 ```
 
-<hr />
-
 ## Flow control with operators
 Use of &&, ||, and ternary operators to control execution flow and variable declaration is totally okay.
 
@@ -521,19 +481,13 @@ isTimerReady && timer.start();
 timer[isTimerReady ? ‘start’ : ‘wait’]();
 ```
 
-<hr />
-
 ## Strictness
 === is preferred to == when applicable.
 Window properties (not methods) are prefixed with “window”.
 parseInt() always gets a second argument of 10 (unless you really do want to parse an octal or a binary number).
 
-<hr />
-
 ## Eval
 Don’t use eval() to solve any problem except executing user-written JS. Don’t pass strings to setTimeout().
-
-<hr />
 
 ## Script Tags
 HTML comments, CDATA, etc don’t belong in script tags. Neither do language or type attributes.
