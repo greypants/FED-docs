@@ -57,23 +57,22 @@ background-image: url(“image.png”);
 <hr>
 
 ### Blank Lines
-Use a single blank line to visually separate ideas. CSS rules and JavaScript methods are always followed/preceded by blank lines.
+Use a single blank line to visually separate ideas. The first and last lines of a block are never blank.
 
 ```
 RIGHT
 // no methods, thus, no blank lines
 myObject = {
 	foo: bar,
+
 	bar: foo
 };
 
 // has methods, has blanks
 myMethods = {
-
 	init: function() {},
 
 	bindEvents: function() {}
-
 };
 
 /* @group reset */
@@ -88,7 +87,6 @@ myMethods = {
 		p {
 
 		}
-
 	}
 
 /* @end */
@@ -104,7 +102,9 @@ myMethods = {
 /* @group reset */
 
 	p {
+
 		margin: 0;
+
 	}
 	div {
 		margin: 0 0 10px;
