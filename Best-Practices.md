@@ -281,7 +281,7 @@ Additionally, “use strict”; should be prepended inside a closed scope around
 
 <hr>
 
-### Minimizing Globar Vars
+### Minimizing Global Vars
 Namespace all code to a clientname, and wrap your code in a self-executing function to prevent scope leak. Example:
 
 ```
