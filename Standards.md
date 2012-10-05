@@ -310,26 +310,7 @@ p {
 
 <hr>
 
-### Property order
-CSS properties are alphabetically ordered, after any @extends and @includes.
-
-```
-p {
-	@extend .text;
-	@include border-radius(5px);
-	@include rotate(5);
-	border: 1px solid red;
-	-moz-box-shadow: 0 0 1px #000;
-	-webkit-box-shadow: 0 0 1px #000;
-	box-shadow: 0 0 1px #000;
-	display: block;
-	width: 200px;
-}
-```
-
-<hr>
-
-Sass Syntax
+### Sass Syntax
 Use Sass, Use the SCSS syntax.
 
 <hr>

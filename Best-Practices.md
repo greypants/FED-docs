@@ -150,6 +150,24 @@ When creating IDs and Classes, try to avoid visual identifiers such as direction
 We strive to maintain proper separation of content and design, and therefore highly discourage the use of inline style=”…” attributes. CMS-controlled styles (background images, user-specified colors) are a common and valid exception.
 
 <hr>
+### Property order
+CSS properties should, generally, by alphabetically ordered, after any @extends. You can place @includes where they work best.
+
+```
+p {
+  @extend .text;
+  @include border-radius(5px);
+  @include rotate(5);
+  border: 1px solid red;
+  -moz-box-shadow: 0 0 1px #000;
+  -webkit-box-shadow: 0 0 1px #000;
+  box-shadow: 0 0 1px #000;
+  display: block;
+  width: 200px;
+}
+```
+<hr>
+
 
 ### Validation
 Don’t validate your CSS.
