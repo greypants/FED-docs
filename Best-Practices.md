@@ -151,7 +151,7 @@ We strive to maintain proper separation of content and design, and therefore hig
 
 <hr>
 ### Property order
-CSS properties should, generally, by alphabetically ordered, after any @extends. You can place @includes where they work best.
+CSS properties should, generally, be alphabetically ordered, after any @extends. You can place @includes where they work best.
 
 ```
 p {
