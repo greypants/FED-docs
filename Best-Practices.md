@@ -115,8 +115,8 @@ Avoid making the site’s logo an H1 element, particularly on every page of a gi
 Include skipnav links at the top of your page. When using these, you might also want to include the JS fix for Webkit browsers.
 
 <ul class="screen-reader">
-  <li><a href="#nav">Skip to Navigation</a></li>
-  <li><a href="#content">Skip to Content</a></li>
+	<li><a href="#nav">Skip to Navigation</a></li>
+	<li><a href="#content">Skip to Content</a></li>
 </ul>
 
 Use ARIA landmark roles on your document structure. Roles:
@@ -138,7 +138,7 @@ We do not guarantee code is 100% valid, but instead assures the cross-browser ex
 ### IDs & Classes
 IDs and Classes should be specific and meaningful. IDs should be avoided where possible, due to their difficulty to override or reuse.
 
-Use terse CSS statements (‘.header-btn’, ‘.product-list li’) when possible to make code more reusable and easier to override. When you use the cascade, avoid long-distance cascading  (example: using classes on body to set font-sizes on a paragraph).
+Use terse CSS statements (‘.header-btn’, ‘.product-list li’) when possible to make code more reusable and easier to override. When you use the cascade, avoid long-distance cascading	(example: using classes on body to set font-sizes on a paragraph).
 
 When creating IDs and Classes, try to avoid visual identifiers such as directions and colors like top, left, red and blue unless absolutely necessary on a system of large scale and complexity. This keeps visual meaning out of markup and leaves it up to CSS to define layout. When naming multiple identical regions differentiate by nothing other than position or color, use a numbering sequence such as “section-1” and “group-2”.
 
@@ -155,15 +155,15 @@ CSS properties should, generally, be alphabetically ordered, after any @extends.
 
 ```
 p {
-  @extend .text;
-  @include border-radius(5px);
-  @include rotate(5);
-  border: 1px solid red;
-  -moz-box-shadow: 0 0 1px #000;
-  -webkit-box-shadow: 0 0 1px #000;
-  box-shadow: 0 0 1px #000;
-  display: block;
-  width: 200px;
+	@extend .text;
+	@include border-radius(5px);
+	@include rotate(5);
+	border: 1px solid red;
+	-moz-box-shadow: 0 0 1px #000;
+	-webkit-box-shadow: 0 0 1px #000;
+	box-shadow: 0 0 1px #000;
+	display: block;
+	width: 200px;
 }
 ```
 <hr>
@@ -185,12 +185,12 @@ Hacks are not used. When you need to target a specific browser, use a class on t
 ```
 RIGHT
 .ie6 .box {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 WRONG
 .box {
-  *margin-right: 10px;
+	*margin-right: 10px;
 }
 ```
 
@@ -201,12 +201,12 @@ Class the html tag with the appropriate version of IE to be used directly in the
 
 ```
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 7]>		<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>		<html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-   .box { ... }
-   .lt-ie7 .box { ... }
+	 .box { ... }
+	 .lt-ie7 .box { ... }
 
 ```
 
@@ -234,13 +234,13 @@ Define all your mixins/variables/defaults in a single file when possible.
 Sample structure for a screen.scss file:
 
 ```
-    @import ‘mixins’
-    @import ‘reset’
-    @import ‘base’
-    @import ‘structure’
-    @import ‘modules’
-    @import ‘pages/*’
-    @import ‘utility’
+		@import ‘mixins’
+		@import ‘reset’
+		@import ‘base’
+		@import ‘structure’
+		@import ‘modules’
+		@import ‘pages/*’
+		@import ‘utility’
 ```
 
 Use @extend, not mixins, to repeat large blocks of style in a number of rules.
@@ -266,12 +266,12 @@ Avoid anonymous functions when named ones will better describe behavior. For exa
 
 ```
 $(‘.row’).each(function(){
-  var $cols = $(this).find(‘.col’);
+	var $cols = $(this).find(‘.col’);
 var maxHeight = 0;
-  $cols.each(function(){
-    maxHeight = Math.max($(this).height(), maxHeight);
-  });
-  $cols.height(maxHeight);
+	$cols.each(function(){
+		maxHeight = Math.max($(this).height(), maxHeight);
+	});
+	$cols.height(maxHeight);
 });
 ```
 
@@ -279,12 +279,12 @@ Is less clear than this:
 
 ```
 var equalizeHeight = function(){
-  var $cols = $(this).find(‘.col’),
-  var maxHeight = 0;
-  var setMaxHeight = function(){
+	var $cols = $(this).find(‘.col’),
+	var maxHeight = 0;
+	var setMaxHeight = function(){
 maxHeight = Math.max($(this).height(), max_height);
-  };
-  $cols.each(setMaxHeight).height(maxHeight);
+	};
+	$cols.each(setMaxHeight).height(maxHeight);
 };
 
 $(‘.row’).each(equalizeHeight);
@@ -307,9 +307,9 @@ window.CLIENTNAME = window.CLIENTNAME || {};
 
 (function(C, $){
 
-  ‘use strict’;
+	‘use strict’;
 
-  ...code...
+	...code...
 
 })(window.CLIENTNAME, jQuery);
 ```
@@ -364,12 +364,12 @@ Long chains of methods should appear on separate lines after the selector, inden
 
 ```
 $(‘.something’)
-  .show()
-  .css(‘height’, ‘100px’)
-  .attr(‘title’, ‘Some Title’)
-  .data(‘parent’, $myObject)
-  .css({‘height’ : ‘100px’})
-  .fadeOut();
+	.show()
+	.css(‘height’, ‘100px’)
+	.attr(‘title’, ‘Some Title’)
+	.data(‘parent’, $myObject)
+	.css({‘height’ : ‘100px’})
+	.fadeOut();
 ```
 
 <hr>
