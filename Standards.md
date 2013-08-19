@@ -18,7 +18,7 @@ Indent with hard tabs, not spaces. Do not mix tabs and spaces.
 RIGHT
 var handler = function() {
 	var response = 'foo';
-var error = 'bar';
+	var error = 'bar';
 	$(this).remove();
 }
 
